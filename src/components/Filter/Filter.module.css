@@ -1,8 +1,0 @@
-.label {
-	display: flex;
-	flex-direction: column;
-}
-.label input {
-	margin-top: 10px;
-	width: 100px;
-}
