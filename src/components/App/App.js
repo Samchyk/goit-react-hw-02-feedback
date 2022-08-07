@@ -5,14 +5,12 @@ import Statistics from 'components/Statistics/Statistics';
 import React, { Component } from 'react';
 import s from './App.module.css';
 
-
 class App extends Component {
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
-  
 
   countPositiveFeedbackPercentage = () => {
     const { good, neutral, bad } = this.state;
@@ -23,16 +21,14 @@ class App extends Component {
     const feedback = (good * 100) / total;
     return Math.round(feedback);
   };
-  handelClick = name => {
+  leaveFeedback = name => {
     this.setState(prevState => ({ [name]: prevState[name] + 1 }));
   };
 
-
-countTotalFeedback = () => {
+  countTotalFeedback = () => {
     const { good, bad, neutral } = this.state;
-  return good + neutral + bad;
-}
-  ;
+    return good + neutral + bad;
+  };
 
   render() {
     const { good, neutral, bad } = this.state;
@@ -43,7 +39,7 @@ countTotalFeedback = () => {
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
-            onLeaveFeedback={this.handelClick}
+            leaveFeedback={this.leaveFeedback}
           />
         </Section>
         <Section title="Statistics">
