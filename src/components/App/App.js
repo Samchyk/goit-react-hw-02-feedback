@@ -17,7 +17,7 @@ class App extends Component {
     if (!good) {
       return 0;
     }
-    const total = good + neutral + bad;
+    const total = this.countTotalFeedback();
     const feedback = (good * 100) / total;
     return Math.round(feedback);
   };
